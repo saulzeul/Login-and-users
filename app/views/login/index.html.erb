@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall" ng-controller="hola">
+                <div class="profile-img" ><%= image_tag "papelera.png", :alt => "Logo", :title => "Logo"%></div>
+                <form  id="form-login" action="<?=(base_url().'login/iniciar_sesion')?>"class="form-signin" name="myForm" method="post">
+                <input type="text" name="nom_usuario" id="nom_usuario" class="form-control" placeholder="Usuario"  ng-model="usuario" required autofocus>
+                <input type="password" class="form-control" name="pass_usuario" id="pass_usuario" placeholder="Contraseña" ng-model="password" required>
+                <button class="btn btn-primary btn-block" type="submit" ng-disabled="myForm.$invalid">Iniciar sesion</button>
+                <div id="no-login" class="alert alert-danger"  style="display:none; height: 40px; padding-top:6px; margin-top: 10px;"role="alert">
+                  Contraseña o usuario incorrectos
+                  <a class="close" data-dismiss="alert" aria-label="close">×</a>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
